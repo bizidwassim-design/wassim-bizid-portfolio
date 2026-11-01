@@ -4,16 +4,16 @@
 
 [![Live site](https://img.shields.io/badge/live-portfolio-2F80ED?style=for-the-badge&logo=githubpages&logoColor=white)](https://bizidwassim-design.github.io/wassim-bizid-portfolio/)
 [![Deploy](https://github.com/bizidwassim-design/wassim-bizid-portfolio/actions/workflows/pages.yml/badge.svg)](https://github.com/bizidwassim-design/wassim-bizid-portfolio/actions/workflows/pages.yml)
-![Zero dependencies](https://img.shields.io/badge/dependencies-0-42C7A5?style=flat-square)
-![No build step](https://img.shields.io/badge/build-none-8B7CF6?style=flat-square)
-![Strict CSP](https://img.shields.io/badge/CSP-strict-24445D?style=flat-square)
+[![Zero dependencies](https://img.shields.io/badge/dependencies-0-42C7A5?style=flat-square)](https://github.com/bizidwassim-design?tab=repositories)
+[![No build step](https://img.shields.io/badge/build-none-8B7CF6?style=flat-square)](https://github.com/bizidwassim-design?tab=repositories)
+[![Strict CSP](https://img.shields.io/badge/CSP-strict-24445D?style=flat-square)](https://github.com/bizidwassim-design?tab=repositories)
 
 </div>
 
 ## > whoami
 
 Cybersecurity and GRC leader. This repository is the source of my interactive portfolio: 23 anonymised case
-studies, 17 open-source GRC and SOC projects, credentials and a short story of how I work.
+studies, 19 open-source GRC and SOC projects, credentials and a short story of how I work.
 
 **Open it → [bizidwassim-design.github.io/wassim-bizid-portfolio](https://bizidwassim-design.github.io/wassim-bizid-portfolio/)**
 

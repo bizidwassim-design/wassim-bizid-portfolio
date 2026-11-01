@@ -298,7 +298,7 @@
   /* ---------- open source (with live GitHub data) ---------- */
   var ossCards = {};
   var ossWrap = h("div", { class: "grid g2 mt" });
-  var OSS_ORDER = ["UAE IA Compliance Matrix", "Application Risk Assessment Template", "Risk Treatment Plan Generator", "Vendor Risk Assessment (TPRM) Template", "Cybersecurity RACI Matrices Library", "ISO 27001 & ISO 42001 Toolkit", "GRC Control Crosswalk", "Control Evidence Collector", "Policy-as-Code Starter", "AI Risk Assessment Template (ISO/IEC 42001)", "Threat Modeling Toolkit", "CISO Executive Dashboard", "Security Metrics & KPI Library", "SOC Maturity Assessment Tool", "SOC Detection Rules & Playbooks", "Incident Response Playbooks Pack", "Public Scripts"];
+  var OSS_ORDER = ["UAE IA Compliance Matrix", "ISO 27001 ISMS Lab", "Executive Risk Pack", "Application Risk Assessment Template", "Risk Treatment Plan Generator", "Vendor Risk Assessment (TPRM) Template", "Cybersecurity RACI Matrices Library", "ISO 27001 & ISO 42001 Toolkit", "GRC Control Crosswalk", "Control Evidence Collector", "Policy-as-Code Starter", "AI Risk Assessment Template (ISO/IEC 42001)", "Threat Modeling Toolkit", "CISO Executive Dashboard", "Security Metrics & KPI Library", "SOC Maturity Assessment Tool", "SOC Detection Rules & Playbooks", "Incident Response Playbooks Pack", "Public Scripts"];
   function ossRank(p) { var k = OSS_ORDER.indexOf(p.name); return k < 0 ? 99 : k; }
   D.ownProjects.slice().sort(function (a, b) { return ossRank(a) - ossRank(b); }).forEach(function (p) {
     var slug = p.href.split("/").pop();
@@ -316,10 +316,10 @@
   /* GRC coverage: every domain points at work that already appears on this page */
   var COVERAGE = [
     ["Risk assessment & treatment", "Business-application risk assessments with owners, treatment options and an executive risk view.", ["18", "04"], ["Application Risk Assessment Template", "Risk Treatment Plan Generator"]],
-    ["Compliance & audit", "UAE IA Standard compliance matrix, ISO/IEC 27001 and 42001 control mapping, SOC 2 control evidence and an evidence collector.", ["13"], ["UAE IA Compliance Matrix", "ISO 27001 & ISO 42001 Toolkit", "GRC Control Crosswalk", "Control Evidence Collector"]],
+    ["Compliance & audit", "UAE IA Standard compliance matrix, ISO/IEC 27001 and 42001 control mapping, SOC 2 control evidence and an evidence collector.", ["13"], ["UAE IA Compliance Matrix", "ISO 27001 ISMS Lab", "ISO 27001 & ISO 42001 Toolkit", "GRC Control Crosswalk", "Control Evidence Collector"]],
     ["Third-party risk", "Vendor assessment, renewal governance and control of third-party remote access.", ["16", "08"], ["Vendor Risk Assessment (TPRM) Template"]],
     ["Policy & accountability", "Policy enforced as code, hardened baselines and clear RACI ownership.", ["01"], ["Policy-as-Code Starter", "Cybersecurity RACI Matrices Library"]],
-    ["Metrics & executive reporting", "KPIs that leadership can act on, from Secure Score progress to a CISO dashboard.", ["04"], ["CISO Executive Dashboard", "Security Metrics & KPI Library"]],
+    ["Metrics & executive reporting", "KPIs that leadership can act on, from Secure Score progress to a CISO dashboard.", ["04"], ["Executive Risk Pack", "CISO Executive Dashboard", "Security Metrics & KPI Library"]],
     ["AI governance", "AI risk assessment aligned to ISO/IEC 42001, structured threat modelling and a human-controlled agentic orchestrator.", ["23"], ["AI Risk Assessment Template (ISO/IEC 42001)", "Threat Modeling Toolkit"]],
     ["Resilience & incident governance", "Multi-site continuity design and response playbooks that keep decisions accountable.", ["17", "19"], ["Incident Response Playbooks Pack"]]
   ];

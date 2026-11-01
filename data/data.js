@@ -168,6 +168,26 @@ window.PF_DATA = {
    "value": "< 4 h",
    "label": "recovery objective",
    "detail": "RTO and RPO designed across 3 locations"
+  },
+  {
+   "value": "8",
+   "label": "people led",
+   "detail": "Four L1 and two L2 SOC analysts plus engineers; cyber risk reported to the board"
+  },
+  {
+   "value": "USD 286k",
+   "label": "security budget managed",
+   "detail": "Tooling, services and around fifteen vendors"
+  },
+  {
+   "value": "−90%",
+   "label": "false positives",
+   "detail": "After detection tuning and response automation"
+  },
+  {
+   "value": "88",
+   "label": "initiatives delivered",
+   "detail": "Governance, identity, endpoints, network and SecOps"
   }
  ],
  "sectorExperience": [
@@ -1136,6 +1156,30 @@ window.PF_DATA = {
   }
  ],
  "ownProjects": [
+  {
+   "name": "Executive Risk Pack",
+   "description": "Quarterly board cyber-risk pack generated from CSV and YAML: one-page summary, NIST CSF 2.0 posture against target, top-ten risks with heat map, key risk indicators with RAG status, a twelve-month regulatory and assurance calendar and the decisions the board is asked to take. Markdown, Excel and PNG outputs, validated in CI; fictional sample company.",
+   "href": "https://github.com/bizidwassim-design/executive-risk-pack",
+   "tags": [
+    "Board reporting",
+    "NIST CSF 2.0",
+    "KRI",
+    "Python",
+    "Excel"
+   ]
+  },
+  {
+   "name": "ISO 27001 ISMS Lab",
+   "description": "A complete, fictional ISO/IEC 27001:2022 ISMS cycle for a 400-person UAE logistics company: context, risk assessment, Statement of Applicability, internal audit and management review, where the same assets, risks, controls and findings flow through every document. Build script, validator proving all 93 Annex A controls are covered, CI. A training lab, not a certification claim.",
+   "href": "https://github.com/bizidwassim-design/iso27001-isms-lab",
+   "tags": [
+    "ISO 27001:2022",
+    "ISMS",
+    "Statement of Applicability",
+    "Internal audit",
+    "Python"
+   ]
+  },
   {
    "name": "UAE IA Compliance Matrix",
    "description": "Single-page compliance matrix for the UAE Information Assurance Standard: 15 control families with status, owner, target date and evidence, compliance score, per-family bars, prioritised gap list, mappings to ISO/IEC 27001:2022 and NIST CSF 2.0, CSV import of your own control list, JSON/CSV export. No build step, hosted on GitHub Pages.",

@@ -299,5 +299,8 @@
   fromHash();
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
     window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () { /* offline support is optional */ }); });
+    /* a new version took control: reload once so returning visitors see current content, not the old cache */
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener("controllerchange", function () { if (navigator.serviceWorker.controller && !reloaded && !sessionStorage.getItem("pf-reloaded")) { reloaded = true; try { sessionStorage.setItem("pf-reloaded", "1"); } catch (e) { /* ignore */ } location.reload(); } });
   }
 })();
