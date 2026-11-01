@@ -1,5 +1,5 @@
 /* Offline support: precache the shell, cache images on first view, never cache the GitHub API. */
-const VERSION = "pf-v15";
+const VERSION = "pf-v16";
 const SHELL = ["./", "index.html", "css/style.css", "js/core.js", "js/overlays.js", "data/data.js", "manifest.webmanifest", "assets/brand/icon.svg", "assets/brand/icon-192.png"];
 
 self.addEventListener("install", (e) => {
