@@ -1137,6 +1137,19 @@ window.PF_DATA = {
  ],
  "ownProjects": [
   {
+   "name": "UAE IA Compliance Matrix",
+   "description": "Single-page compliance matrix for the UAE Information Assurance Standard: 15 control families with status, owner, target date and evidence, compliance score, per-family bars, prioritised gap list, mappings to ISO/IEC 27001:2022 and NIST CSF 2.0, CSV import of your own control list, JSON/CSV export. No build step, hosted on GitHub Pages.",
+   "href": "https://github.com/bizidwassim-design/uae-ia-compliance-matrix",
+   "tags": [
+    "UAE IA Standard",
+    "Compliance matrix",
+    "ISO 27001",
+    "NIST CSF 2.0",
+    "HTML / JS",
+    "GitHub Pages"
+   ]
+  },
+  {
    "name": "Application Risk Assessment Template",
    "description": "Open-source Excel workbook to assess application risks with a Likelihood × Impact (5×5) method: inventory, risk register, dashboard and heat map. Aligned with ISO 27001, NIST CSF 2.0 and ISO 42001.",
    "href": "https://github.com/bizidwassim-design/application-risk-assessment-template",
