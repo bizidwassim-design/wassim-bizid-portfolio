@@ -12,7 +12,7 @@
 
 ## > whoami
 
-Cybersecurity and GRC leader. This repository is the source of my interactive portfolio: 22 anonymised case
+Cybersecurity and GRC leader. This repository is the source of my interactive portfolio: 23 anonymised case
 studies, 16 open-source GRC and SOC projects, credentials and a short story of how I work.
 
 **Open it → [bizidwassim-design.github.io/wassim-bizid-portfolio](https://bizidwassim-design.github.io/wassim-bizid-portfolio/)**
@@ -26,7 +26,7 @@ studies, 16 open-source GRC and SOC projects, credentials and a short story of h
 
 | | |
 |---|---|
-| **Project explorer** | Search across 22 case studies, 11 topic filters, sort, grid or list view, deep links such as `#project-07` |
+| **Project explorer** | Search across 23 case studies, 12 topic filters, sort, grid or list view, deep links such as `#project-07` |
 | **Command palette** | `Ctrl K` jumps to any section, project or link |
 | **Terminal** | Press the backtick key: `help`, `whoami`, `ls`, `open`, `cat`, `stats`, `skills`, `certs`, `contact`, `theme`, `neofetch` |
 | **Live GitHub stats** | Public repositories and stars read from the GitHub API, cached for 30 minutes |

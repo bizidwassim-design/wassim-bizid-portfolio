@@ -958,6 +958,39 @@ window.PF_DATA = {
    "icon": "Workflow",
    "tone": "#FFF8D8",
    "accent": "#C79012"
+  },
+  {
+   "number": "23",
+   "title": "Agentic operations orchestrator with human control",
+   "category": "AGENTIC AI · MCP · CLAUDE CODE · SECURITY OPERATIONS · ASSURANCE · HUMAN-IN-THE-LOOP",
+   "summary": "A maestro agent in Claude Code that orchestrates MCP servers, each connected to one business cybersecurity application, so investigations, reports and assessments run from a single controlled entry point.",
+   "challenge": "Routine security operations meant working across many separate applications by hand: pulling evidence from each console, correlating it, writing the report and preparing audit material. The work was repetitive, slow and dependent on who happened to be on shift.",
+   "built": [
+    "Designed a maestro orchestrator in Claude Code that receives a task, plans the steps and delegates them to specialised agents.",
+    "Connected one MCP server to each business cybersecurity application, so every application is reached through a defined, narrow interface instead of ad hoc access.",
+    "Had the maestro combine what the servers return into one coherent result: an investigation timeline, a report or an assessment draft.",
+    "Kept a person in control: the orchestrator investigates, drafts and recommends, and a person reviews and approves before anything changes in a system.",
+    "Treated the orchestrator as a governed AI system: each connection has a defined purpose and a person stays accountable for the decisions."
+   ],
+   "evidence": "Cybersecurity investigation in about 15 minutes instead of 4 hours. Report generation in about 15 minutes instead of 2 days. Audit and assessment in about 1 day instead of 2 weeks. The figures compare typical effort before and after orchestration.",
+   "tools": [
+    "Claude Code",
+    "MCP servers",
+    "Agentic orchestration",
+    "Human-in-the-loop",
+    "ISO/IEC 42001",
+    "Security operations"
+   ],
+   "flow": [
+    "Task or alert",
+    "Maestro agent plans",
+    "MCP servers query each application",
+    "Findings combined",
+    "Human review & approval"
+   ],
+   "icon": "Workflow",
+   "tone": "#EFEBFF",
+   "accent": "#8B7CF6"
   }
  ],
  "events": [

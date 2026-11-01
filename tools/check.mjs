@@ -46,7 +46,7 @@ ok("anchors resolve");
 ok("CSP strict, no inline code");
 
 // 6. Content sanity
-data.projects.length === 22 || fail("expected 22 case studies, found " + data.projects.length);
+data.projects.length === 23 || fail("expected 23 case studies, found " + data.projects.length);
 data.ownProjects.length === 16 || fail("expected 16 open-source projects, found " + data.ownProjects.length);
 ok(data.projects.length + " case studies, " + data.ownProjects.length + " open-source projects");
 

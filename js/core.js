@@ -186,7 +186,8 @@
     ["Resilience", /continuity|disaster|backup|recovery|datto|resilience/i],
     ["Vulnerability management", /vulnerab|openvas|kali/i],
     ["Human risk", /awareness|phishing|human-risk|human risk/i],
-    ["Automation", /automation|powershell|rest api|workflow|soar/i]
+    ["Automation", /automation|powershell|rest api|workflow|soar/i],
+    ["Agentic AI", /agentic|claude|mcp/i]
   ];
   var tagCount = {}, tagLabel = {};
   D.projects.forEach(function (p) {
@@ -199,7 +200,7 @@
   var state = { q: "", tag: "GRC & risk", sort: "num", view: "grid" };
   PF.visible = D.projects.slice();
 
-  var search = h("input", { id: "proj-search", type: "search", placeholder: "Search 22 case studies: Defender, identity, SIEM, OT…", "aria-label": "Search case studies", autocomplete: "off" });
+  var search = h("input", { id: "proj-search", type: "search", placeholder: "Search 23 case studies: Defender, identity, SIEM, OT…", "aria-label": "Search case studies", autocomplete: "off" });
   var sortSel = h("select", { class: "select", "aria-label": "Sort case studies" }, h("option", { value: "num", text: "Sort: project number" }), h("option", { value: "az", text: "Sort: A to Z" }), h("option", { value: "rev", text: "Sort: newest first" }));
   var gridBtn = h("button", { type: "button", "aria-pressed": "true", "aria-label": "Grid view", html: icon("LayoutGrid") });
   var listBtn = h("button", { type: "button", "aria-pressed": "false", "aria-label": "List view", html: icon("List") });
@@ -319,7 +320,7 @@
     ["Third-party risk", "Vendor assessment, renewal governance and control of third-party remote access.", ["16", "08"], ["Vendor Risk Assessment (TPRM) Template"]],
     ["Policy & accountability", "Policy enforced as code, hardened baselines and clear RACI ownership.", ["01"], ["Policy-as-Code Starter", "Cybersecurity RACI Matrices Library"]],
     ["Metrics & executive reporting", "KPIs that leadership can act on, from Secure Score progress to a CISO dashboard.", ["04"], ["CISO Executive Dashboard", "Security Metrics & KPI Library"]],
-    ["AI governance", "AI risk assessment aligned to ISO/IEC 42001 and structured threat modelling.", [], ["AI Risk Assessment Template (ISO/IEC 42001)", "Threat Modeling Toolkit"]],
+    ["AI governance", "AI risk assessment aligned to ISO/IEC 42001, structured threat modelling and a human-controlled agentic orchestrator.", ["23"], ["AI Risk Assessment Template (ISO/IEC 42001)", "Threat Modeling Toolkit"]],
     ["Resilience & incident governance", "Multi-site continuity design and response playbooks that keep decisions accountable.", ["17", "19"], ["Incident Response Playbooks Pack"]]
   ];
   var grcMap = h("div", { class: "grc-map", role: "list", "aria-label": "GRC coverage" }, COVERAGE.map(function (c) {
