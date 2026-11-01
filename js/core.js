@@ -355,29 +355,23 @@
     }))
   ]);
 
-  /* ---------- moments carousel ---------- */
+  /* ---------- moments gallery ---------- */
   (function moments() {
-    var M = D.souvenirMoments, i = 0;
-    var img = h("img", { alt: "", width: 1600, height: 1000, loading: "lazy" });
-    var tag = h("p", { class: "tg" }), ttl = h("h3"), dsc = h("p");
-    var dots = h("div", { class: "dots" });
-    function show(n) {
-      i = (n + M.length) % M.length; var m = M[i];
-      img.src = m.src; img.alt = m.alt; img.width = m.width; img.height = m.height;
-      tag.textContent = m.tag; ttl.textContent = m.title; dsc.textContent = m.description;
-      $$("button", dots).forEach(function (b, k) { b.setAttribute("aria-current", String(k === i)); });
+    var M = D.souvenirMoments;
+    function item(m) {
+      var ratio = m.width / m.height;
+      var fig = h("figure", { class: "m-item" + (ratio < 1 ? " portrait" : ""), tabindex: "0" },
+        h("img", { src: m.src, alt: m.alt, width: m.width, height: m.height, loading: "lazy" }),
+        h("figcaption", { class: "m-cap" }, h("p", { class: "tg" }, m.tag), h("h3", null, m.title), h("p", { class: "dsc" }, m.description)));
+      fig.style.setProperty("flex", ratio.toFixed(3) + " 1 0");
+      return fig;
     }
-    M.forEach(function (m, k) { dots.appendChild(h("button", { type: "button", "aria-label": "Show moment " + (k + 1), on: { click: function () { show(k); } } })); });
-    var prev = h("button", { class: "icon-btn", type: "button", "aria-label": "Previous moment", html: icon("ChevronLeft"), on: { click: function () { show(i - 1); } } });
-    var next = h("button", { class: "icon-btn", type: "button", "aria-label": "Next moment", html: icon("ChevronRight"), on: { click: function () { show(i + 1); } } });
-    var car = h("div", { class: "carousel", tabindex: "0", "aria-roledescription": "carousel", "aria-label": "Professional moments" },
-      h("div", { class: "slide-wrap" }, h("div", { class: "photo" }, img), h("div", { class: "cap" }, tag, ttl, dsc, h("div", { class: "car-nav" }, prev, dots, next))));
-    var x0 = null;
-    car.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") show(i + 1); if (e.key === "ArrowLeft") show(i - 1); });
-    car.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-    car.addEventListener("touchend", function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
-    mount("moments", [head("moments-title", "06 · Professional moments", "Memorable Moments", "Professional connections, cybersecurity conferences and executive education: memorable encounters and milestones that continue to shape my journey."), car]);
-    show(0);
+    /* two justified rows: every photo is shown at once, side by side */
+    var rows = [[0, 1], [2, 3, 4]].map(function (r) {
+      return h("div", { class: "m-row" }, r.filter(function (k) { return M[k]; }).map(function (k) { return item(M[k]); }));
+    });
+    mount("moments", [head("moments-title", "06 · Professional moments", "Memorable Moments", "Professional connections, cybersecurity conferences and executive education: memorable encounters and milestones that continue to shape my journey."),
+      h("div", { class: "moments", role: "group", "aria-label": "Professional moments" }, rows)]);
   })();
 
   /* ---------- values ---------- */
