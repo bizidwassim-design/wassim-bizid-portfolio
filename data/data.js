@@ -1184,6 +1184,7 @@ window.PF_DATA = {
    "name": "UAE IA Compliance Matrix",
    "description": "Single-page compliance matrix for the UAE Information Assurance Standard: 15 control families with status, owner, target date and evidence, compliance score, per-family bars, prioritised gap list, mappings to ISO/IEC 27001:2022 and NIST CSF 2.0, CSV import of your own control list, JSON/CSV export. No build step, hosted on GitHub Pages.",
    "href": "https://github.com/bizidwassim-design/uae-ia-compliance-matrix",
+   "live": "https://bizidwassim-design.github.io/uae-ia-compliance-matrix/",
    "tags": [
     "UAE IA Standard",
     "Compliance matrix",
@@ -1208,6 +1209,7 @@ window.PF_DATA = {
    "name": "GRC Control Crosswalk",
    "description": "Mapping of the 93 ISO 27001:2022 Annex A controls to NIST CSF 2.0, CIS Controls v8, ISO 42001 and SOC 2, with UAE IAR, DESC ISR, UAE PDPL, PCI DSS v4.0.1, NIST SP 800-53 and ISO 22301 overlays — an interactive explorer on GitHub Pages plus Excel, CSV and YAML. Implement each control once, answer every framework.",
    "href": "https://github.com/bizidwassim-design/grc-control-crosswalk",
+   "live": "https://bizidwassim-design.github.io/grc-control-crosswalk/",
    "tags": [
     "Excel",
     "CSV / YAML",
@@ -1233,6 +1235,7 @@ window.PF_DATA = {
    "name": "CISO Executive Dashboard",
    "description": "Single-page security dashboard for executive and board reporting: eight KPIs, NIST CSF 2.0 maturity radar, risk and incident trends, vulnerability SLA, compliance progress, top risks, roadmap and budget. Edit one data file, host on GitHub Pages.",
    "href": "https://github.com/bizidwassim-design/ciso-executive-dashboard",
+   "live": "https://bizidwassim-design.github.io/ciso-executive-dashboard/",
    "tags": [
     "HTML / Chart.js",
     "NIST CSF 2.0",
@@ -1292,6 +1295,7 @@ window.PF_DATA = {
    "name": "Vendor Risk Assessment (TPRM) Template",
    "description": "Third-party risk management as a workbook and as a web app on GitHub Pages: inherent-risk tiering, a 60-question questionnaire with weighted scoring across eleven domains, residual rating, contract-clause checklist per tier and dashboard, plus the questionnaire as a sendable Markdown form.",
    "href": "https://github.com/bizidwassim-design/vendor-risk-assessment-template",
+   "live": "https://bizidwassim-design.github.io/vendor-risk-assessment-template/",
    "tags": [
     "TPRM",
     "Supply chain",
@@ -1343,6 +1347,7 @@ window.PF_DATA = {
    "name": "SOC Maturity Assessment Tool",
    "description": "Single-page self-assessment: 50 questions across six SOC domains scored on five maturity levels, radar chart, gap table with recommended next steps, JSON export/import and print — no build step, no external scripts, hosted on GitHub Pages.",
    "href": "https://github.com/bizidwassim-design/soc-maturity-assessment",
+   "live": "https://bizidwassim-design.github.io/soc-maturity-assessment/",
    "tags": [
     "SOC",
     "Maturity model",

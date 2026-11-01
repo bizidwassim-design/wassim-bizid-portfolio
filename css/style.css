@@ -377,3 +377,5 @@ kbd{font:600 11px/1 var(--mono);padding:3px 6px;border:1px solid var(--line-2);b
   .reveal{opacity:1;transform:none}
   body{background:#fff;color:#000}
 }
+.oss .btns{display:flex;gap:8px;flex-wrap:wrap}
+.oss .btn.live .dot{width:8px;height:8px;border-radius:50%;background:#42C7A5;box-shadow:0 0 0 3px color-mix(in srgb,#42C7A5 30%,transparent);margin-right:2px}

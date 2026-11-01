@@ -308,7 +308,9 @@
       meta2,
       h("div", { class: "foot-row" },
         h("div", { class: "tags" }, p.tags.map(function (t) { return h("span", { class: "pill", text: t }); })),
-        h("a", { class: "btn btn-primary btn-sm", href: p.href, target: "_blank", rel: "noopener noreferrer" }, "View on GitHub", h("span", { html: icon("ExternalLink") }))));
+        h("div", { class: "btns" },
+          p.live ? h("a", { class: "btn btn-primary btn-sm live", href: p.live, target: "_blank", rel: "noopener noreferrer", "aria-label": "Open the live demo of " + p.name }, h("span", { class: "dot" }), "Live", h("span", { html: icon("ExternalLink") })) : null,
+          h("a", { class: "btn btn-ghost btn-sm", href: p.href, target: "_blank", rel: "noopener noreferrer" }, "View on GitHub", h("span", { html: icon("ExternalLink") })))));
     ossCards[slug] = meta2; ossWrap.appendChild(card);
   });
   var repoHref = {};
