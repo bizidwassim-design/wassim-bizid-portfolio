@@ -67,6 +67,13 @@ Open `http://localhost:8099`. Pushing to `main` deploys to GitHub Pages through
 - The page is marked `noindex`. Remove the robots meta tag in `index.html` to let search engines list it.
 - Content is mine. Reuse the code freely, not the content or the photos.
 
+## AI assistance
+
+Built with Claude Code as a coding and writing assistant, which is why it appears as a co-author on some commits.
+**Editor and reviewer: Wassim Bizid**, who set the scope, the frameworks and the GRC approach, edited the content
+and decided what was published. Automated tests in CI check the published outputs. This is a maintainer review,
+not an independent one.
+
 ## Contact
 
 [LinkedIn](https://www.linkedin.com/in/wassim-bizid/) ·
