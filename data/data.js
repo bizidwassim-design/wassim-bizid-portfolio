@@ -1289,7 +1289,7 @@ window.PF_DATA = {
   },
   {
    "name": "Vendor Risk Assessment (TPRM) Template",
-   "description": "Third-party risk management workbook: inherent-risk tiering, a 60-question questionnaire with weighted scoring across eleven domains, per-vendor assessment summary, contract-clause checklist and dashboard — plus the questionnaire as a sendable Markdown form.",
+   "description": "Third-party risk management as a workbook and as a web app on GitHub Pages: inherent-risk tiering, a 60-question questionnaire with weighted scoring across eleven domains, residual rating, contract-clause checklist per tier and dashboard, plus the questionnaire as a sendable Markdown form.",
    "href": "https://github.com/bizidwassim-design/vendor-risk-assessment-template",
    "tags": [
     "TPRM",
@@ -1297,7 +1297,8 @@ window.PF_DATA = {
     "ISO 27001",
     "NIST CSF 2.0",
     "SOC 2",
-    "Excel"
+    "Excel",
+    "GitHub Pages"
    ]
   },
   {
