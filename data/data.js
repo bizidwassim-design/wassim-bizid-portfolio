@@ -1206,7 +1206,7 @@ window.PF_DATA = {
   },
   {
    "name": "GRC Control Crosswalk",
-   "description": "Mapping of the 93 ISO 27001:2022 Annex A controls to NIST CSF 2.0, CIS Controls v8, ISO 42001 and SOC 2 TSC — Excel with per-framework views, plus CSV and YAML for automation. Implement each control once, answer every framework.",
+   "description": "Mapping of the 93 ISO 27001:2022 Annex A controls to NIST CSF 2.0, CIS Controls v8, ISO 42001 and SOC 2, with UAE IAR, DESC ISR, UAE PDPL, PCI DSS v4.0.1, NIST SP 800-53 and ISO 22301 overlays — an interactive explorer on GitHub Pages plus Excel, CSV and YAML. Implement each control once, answer every framework.",
    "href": "https://github.com/bizidwassim-design/grc-control-crosswalk",
    "tags": [
     "Excel",
@@ -1214,7 +1214,8 @@ window.PF_DATA = {
     "ISO 27001",
     "NIST CSF 2.0",
     "CIS v8",
-    "SOC 2"
+    "SOC 2",
+    "GitHub Pages"
    ]
   },
   {
