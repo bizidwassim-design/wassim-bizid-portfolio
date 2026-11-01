@@ -140,9 +140,9 @@ window.PF_DATA = {
    "detail": "Strategy, architecture, GRC and SecOps"
   },
   {
-   "value": "33→83%+",
+   "value": "33→89%",
    "label": "Microsoft Secure Score",
-   "detail": "Risk-led security programme"
+   "detail": "83% in 24 months, 89% today"
   },
   {
    "value": "40+",
@@ -173,7 +173,7 @@ window.PF_DATA = {
  "sectorExperience": [
   {
    "sector": "Telecommunications",
-   "organisation": "Qatar Telecom",
+   "organisation": "Ooredoo (formerly Qtel)",
    "logo": "assets/company-logos/qtel.svg",
    "logoBackground": "#FFFFFF"
   },
@@ -305,7 +305,7 @@ window.PF_DATA = {
     "More than 60 Windows security GPOs covering Defender, identity, SMB, removable media, sessions and servers.",
     "Telemetry-based validation to distinguish reporting discrepancies from actual control failure."
    ],
-   "evidence": "Secure Score progressed from 33% to above 83%, with control status tracked through recurring governance reviews.",
+   "evidence": "Secure Score progressed from 33% to 83% in 24 months and stands at 89% today, with control status tracked through recurring governance reviews.",
    "tools": [
     "Microsoft Defender XDR",
     "Active Directory",
