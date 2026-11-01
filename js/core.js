@@ -295,6 +295,16 @@
       dash("Human risk programme", "Reporting behaviour", [kpis([["Phish reported", "↑ 31%", "", "#2F80ED"], ["Repeat clicks", "↓ 18%", "", "#42C7A5"], ["Training", "84%", "", "#8B7CF6"]], true)]))
   ]);
 
+  /* ---------- live demos in the hero ---------- */
+  (function liveDemos() {
+    var box = $("#live-demos"), list = D.ownProjects.filter(function (p) { return p.live; });
+    if (!box || !list.length) return;
+    box.appendChild(h("span", { class: "demos-label" }, h("span", { class: "dot" }), "Live demos"));
+    list.forEach(function (p) {
+      box.appendChild(h("a", { class: "demo-chip", href: p.live, target: "_blank", rel: "noopener noreferrer", "aria-label": "Open the live demo of " + p.name + " in a new tab" }, p.name.replace(/ \(TPRM\) Template$/, " (TPRM)").replace(/ Tool$/, ""), h("span", { html: icon("ExternalLink") })));
+    });
+  })();
+
   /* ---------- open source (with live GitHub data) ---------- */
   var ossCards = {};
   var ossWrap = h("div", { class: "grid g2 mt" });
