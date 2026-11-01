@@ -378,4 +378,7 @@ kbd{font:600 11px/1 var(--mono);padding:3px 6px;border:1px solid var(--line-2);b
   body{background:#fff;color:#000}
 }
 .oss .btns{display:flex;gap:8px;flex-wrap:wrap}
-.oss .btn.live .dot{width:8px;height:8px;border-radius:50%;background:#42C7A5;box-shadow:0 0 0 3px color-mix(in srgb,#42C7A5 30%,transparent);margin-right:2px}
+.oss .live-tag{display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2)}
+.oss .live-tag .dot{width:8px;height:8px;border-radius:50%;background:#42C7A5;box-shadow:0 0 0 3px color-mix(in srgb,#42C7A5 30%,transparent)}
+.oss .live-tag .demo{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border-radius:99px;background:var(--accent);color:#fff;font:700 12px/1 var(--sans,inherit);text-transform:none;letter-spacing:0;text-decoration:none}
+.oss .live-tag .demo:hover,.oss .live-tag .demo:focus-visible{filter:brightness(1.08)}
