@@ -419,7 +419,6 @@
     h("div", { class: "cred-split" },
       h("div", null,
         head("credentials-title", "06 · Credentials", "Technical depth, governance perspective.", "Formal security and technology certifications reinforced by business leadership education and continuous field learning. Highlighted cards are certifications I have obtained."),
-        h("p", { class: "mt" }, h("a", { class: "btn btn-primary", href: D.urls.credly, target: "_blank", rel: "noopener noreferrer" }, h("span", { html: icon("Award") }), "Verify badges on Credly", h("span", { html: icon("ExternalLink") }))),
         h("div", { class: "frame-card" }, h("span", { html: icon("GraduationCap") }), h("b", { text: "Framework fluency" }), h("p", { text: "NIST CSF 2.0 · ISO 27001 · ISO 42001 · SOC 2 · CIS Controls · Zero Trust · Microsoft security architecture · risk treatment and audit evidence" }))),
       h("div", { class: "grid g2" }, D.credentials.map(function (c, k) {
         var kd = KIND[c.kind] || KIND.education, colour = ["#2F80ED", "#FF7A6B", "#42C7A5", "#8B7CF6"][k % 4];
@@ -427,8 +426,7 @@
           h("span", { class: "ico", vars: { "--c": colour }, html: icon(c.kind === "certification" ? "ShieldCheck" : "GraduationCap") }),
           h("div", null,
             h("h3", null, c.name, h("span", { class: "st " + kd[0], text: kd[1] })),
-            h("p", { class: "full", text: c.fullName }), h("p", { class: "iss", text: c.issuer }), h("p", { class: "foc", text: c.focus }),
-            c.proof ? h("a", { class: "ver", href: c.proof, target: "_blank", rel: "noopener noreferrer" }, "Verified on Credly ", h("span", { html: icon("ExternalLink") })) : null));
+            h("p", { class: "full", text: c.fullName }), h("p", { class: "iss", text: c.issuer }), h("p", { class: "foc", text: c.focus })));
       }))),
     h("div", { class: "certs" }, h("h3", { text: "Certificates and training records" }), h("p", { class: "note", text: "Tap a certificate to enlarge it." }), strip)
   ]);

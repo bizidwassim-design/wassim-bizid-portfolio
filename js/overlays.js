@@ -120,7 +120,6 @@
     ["Copy my email address", "Action", function () { copy(U.email); }],
     ["Open LinkedIn", "Link", function () { openLink(U.linkedIn); }],
     ["Open GitHub", "Link", function () { openLink(U.github); }],
-    ["Verify badges on Credly", "Link", function () { openLink(U.credly); }],
     ["Print or save as PDF", "Action", function () { window.print(); }]
   ];
 
@@ -214,9 +213,9 @@
       else out("ls: unknown target “" + w + "”. Try projects, oss, certs, events, creds.", "m");
     },
     open: function (a) {
-      if (!a.length) { out("usage: open <n|keyword|section|github|linkedin|credly|calendly>", "m"); return; }
+      if (!a.length) { out("usage: open <n|keyword|section|github|linkedin|calendly>", "m"); return; }
       var w = a.join(" ").toLowerCase();
-      var links = { github: U.github, linkedin: U.linkedIn, credly: U.credly, calendly: U.calendly };
+      var links = { github: U.github, linkedin: U.linkedIn, calendly: U.calendly };
       if (links[w]) { out("opening " + w + "…", "m"); openLink(links[w]); return; }
       var sec = SECTIONS.filter(function (s) { return s[0] === w || s[1].toLowerCase() === w; })[0];
       if (sec) { out("jumping to " + sec[1], "m"); closeTerminal(); go(sec[0]); return; }
@@ -237,7 +236,7 @@
       var n = {}; D.projects.forEach(function (p) { p.tools.forEach(function (t) { n[t] = (n[t] || 0) + 1; }); });
       Object.keys(n).sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b); }).slice(0, 14).forEach(function (t) { out(String(n[t]).padStart(2) + " × " + t); });
     },
-    certs: function () { D.credentials.filter(function (c) { return c.kind === "certification"; }).forEach(function (c) { out("✓ " + c.name + " · " + c.issuer, "c"); }); outLink("verify on Credly →", U.credly); },
+    certs: function () { D.credentials.filter(function (c) { return c.kind === "certification"; }).forEach(function (c) { out("✓ " + c.name + " · " + c.issuer, "c"); }); },
     contact: function () { out("email     " + U.email); outLink("linkedin  " + U.linkedIn, U.linkedIn); outLink("call      " + U.calendly, U.calendly); },
     github: function () {
       if (PF.gh) { out(PF.gh.user.public_repos + " public repos · " + PF.gh.stars + " stars (live)", "c"); PF.gh.repos.slice(0, 6).forEach(function (r) { out("  " + r.name + "  ★" + r.stargazers_count, "m"); }); }

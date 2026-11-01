@@ -70,5 +70,4 @@ Open `http://localhost:8099`. Pushing to `main` deploys to GitHub Pages through
 ## Contact
 
 [LinkedIn](https://www.linkedin.com/in/wassim-bizid/) ·
-[Book a 30-minute call](https://calendly.com/letstalk-today/30min) ·
-[Credly](https://www.credly.com/users/wassim-bizid.13208c9b/badges)
+[Book a 30-minute call](https://calendly.com/letstalk-today/30min)
