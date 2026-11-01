@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compliance matrix for the UAE Information Assurance Standard: status, owner, evidence and gaps per control family, with ISO/IEC 27001 and NIST CSF 2.0 mappings. Runs entirely in your browser.">
+  <meta name="color-scheme" content="light dark">
+  <title>UAE IA Compliance Matrix</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#matrix">Skip to the matrix</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div>
+        <h1>UAE IA Compliance Matrix</h1>
+        <p class="tagline">UAE Information Assurance Standard · 15 control families · mapped to ISO/IEC 27001:2022 and NIST CSF 2.0. Nothing leaves your browser.</p>
+      </div>
+      <div class="header-actions">
+        <button type="button" id="theme-toggle" class="btn btn-ghost" aria-pressed="false">Dark theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card intro" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <p>
+        For each control family, record the implementation status, the owner, a target date and the evidence you could
+        show an assessor. The summary, the gap list and the per-family bars update as you type, and a draft is kept in
+        this browser until you reset it. Export JSON to keep a dated record, or CSV to work in a spreadsheet.
+      </p>
+      <p>
+        The matrix ships at family level. To work control by control, import the control list from your copy of the
+        standard with <strong>Import controls (CSV)</strong>; the template is in
+        <a href="templates/controls-import-template.csv">templates/</a>. Read
+        <a href="docs/framework-notes.md">the framework notes</a> for the mapping rules.
+      </p>
+      <p class="sample-row">
+        <button type="button" id="btn-sample" class="btn">Load the Falcon Bay Logistics sample</button>
+        <span class="muted">Fictional statuses, to see what a filled matrix looks like.</span>
+      </p>
+    </section>
+
+    <section class="card" aria-labelledby="org-title">
+      <h2 id="org-title">Assessment</h2>
+      <div class="field-grid">
+        <label>Organisation <input type="text" id="org" autocomplete="organization" placeholder="Organisation name"></label>
+        <label>Assessment date <input type="date" id="date"></label>
+        <label>Assessor (role) <input type="text" id="assessor" placeholder="e.g. Information security manager"></label>
+      </div>
+    </section>
+
+    <section class="card summary" aria-labelledby="summary-title" aria-live="polite">
+      <h2 id="summary-title">Summary</h2>
+      <div class="kpis" id="kpis"></div>
+      <div class="bars" id="bars"></div>
+    </section>
+
+    <section class="card" id="matrix" aria-labelledby="matrix-title">
+      <div class="toolbar">
+        <h2 id="matrix-title">Matrix</h2>
+        <div class="toolbar-actions">
+          <label class="inline">Group <select id="filter-group"><option value="">All</option><option value="management">Management (M)</option><option value="technical">Technical (T)</option></select></label>
+          <label class="inline">Status <select id="filter-status"><option value="">All</option></select></label>
+          <label class="inline">Priority <select id="filter-priority"><option value="">All</option></select></label>
+          <input type="search" id="filter-text" placeholder="Search id, name, ISO or CSF reference" aria-label="Search the matrix">
+        </div>
+      </div>
+      <p class="muted" id="matrix-meta"></p>
+      <div class="table-wrap">
+        <table class="matrix" id="matrix-table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Control family / control</th>
+              <th scope="col">ISO/IEC 27001:2022</th>
+              <th scope="col">NIST CSF 2.0</th>
+              <th scope="col">Priority</th>
+              <th scope="col">Status</th>
+              <th scope="col">Owner</th>
+              <th scope="col">Target date</th>
+              <th scope="col">Evidence and notes</th>
+            </tr>
+          </thead>
+          <tbody id="matrix-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="gaps-title">
+      <h2 id="gaps-title">Gaps to close first</h2>
+      <p class="muted">Items that are not implemented, ordered by priority then by status. Not-applicable items are excluded.</p>
+      <ol id="gaps" class="gaps"></ol>
+    </section>
+
+    <section class="card actions" aria-labelledby="actions-title">
+      <h2 id="actions-title">Save, load, print</h2>
+      <div class="btn-row">
+        <button type="button" id="btn-export" class="btn btn-primary">Export JSON</button>
+        <button type="button" id="btn-export-csv" class="btn">Export CSV</button>
+        <label class="btn file-btn">Import JSON<input type="file" id="file-import" accept="application/json,.json"></label>
+        <label class="btn file-btn">Import controls (CSV)<input type="file" id="file-controls" accept="text/csv,.csv"></label>
+        <button type="button" id="btn-print" class="btn">Print</button>
+        <button type="button" id="btn-reset" class="btn btn-danger">Reset</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p>Open source under the MIT License. Family names are those of the UAE IA Standard; mappings and evidence hints are this project's own and should be verified against the official text. No data is transmitted: the page's Content-Security-Policy blocks all network requests.</p>
+  </footer>
+
+  <script src="data/controls.js"></script>
+  <script src="data/sample.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -24,6 +24,11 @@ jobs:
           node-version: 22
       - name: Quality gate (assets, anchors, CSP, content)
         run: node tools/check.mjs
+      - name: UAE IA matrix catalogue and generated files
+        run: |
+          node uae-ia-matrix/scripts/check_controls.js
+          node uae-ia-matrix/scripts/build_data.js
+          git diff --exit-code -- uae-ia-matrix/data/controls.csv uae-ia-matrix/examples/falcon-bay-sample.json
 
   deploy:
     needs: check
@@ -36,7 +41,7 @@ jobs:
       - name: Assemble the site (no build step, static files only)
         run: |
           mkdir _site
-          cp -r index.html 404.html .nojekyll manifest.webmanifest sw.js css js data assets _site/
+          cp -r index.html 404.html .nojekyll manifest.webmanifest sw.js css js data assets uae-ia-matrix _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

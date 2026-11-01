@@ -1,0 +1,3 @@
+id,title,description,priority,iso27001,nist_csf
+M1.1.1,Example control title,Short paraphrase of the requirement in your own words (never the standard's text),P1,5.1;5.2,GV.PO
+T5.2.1,Example control title,Short paraphrase,P1,5.15;5.18,PR.AA
