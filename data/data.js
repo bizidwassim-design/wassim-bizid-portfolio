@@ -1183,7 +1183,7 @@ window.PF_DATA = {
   {
    "name": "UAE IA Compliance Matrix",
    "description": "Single-page compliance matrix for the UAE Information Assurance Standard: 15 control families with status, owner, target date and evidence, compliance score, per-family bars, prioritised gap list, mappings to ISO/IEC 27001:2022 and NIST CSF 2.0, CSV import of your own control list, JSON/CSV export. No build step, hosted on GitHub Pages.",
-   "href": "https://github.com/bizidwassim-design/wassim-bizid-portfolio/tree/main/uae-ia-matrix",
+   "href": "https://github.com/bizidwassim-design/uae-ia-compliance-matrix",
    "tags": [
     "UAE IA Standard",
     "Compliance matrix",
