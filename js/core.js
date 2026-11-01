@@ -196,7 +196,7 @@
     p._text = [p.title, p.category, p.summary, p.challenge, p.evidence, p.built.join(" "), p.tools.join(" ")].join(" ").toLowerCase();
   });
   var topTags = TOPICS.map(function (t) { return t[0]; }).filter(function (k) { return tagCount[k]; });
-  var state = { q: "", tag: null, sort: "num", view: "grid" };
+  var state = { q: "", tag: "GRC & risk", sort: "num", view: "grid" };
   PF.visible = D.projects.slice();
 
   var search = h("input", { id: "proj-search", type: "search", placeholder: "Search 22 case studies: Defender, identity, SIEM, OT…", "aria-label": "Search case studies", autocomplete: "off" });
@@ -248,8 +248,8 @@
   PF.filterProjects = function (q) { search.value = q || ""; state.q = q || ""; state.tag = null; apply(); };
 
   mount("work", [
-    head("work-title", "04 · Project library", "Select a project to read the full story.",
-      "Open any project to see the challenge, what I built, the evidence of impact and the technologies involved. Client names and sensitive details are intentionally removed.",
+    head("work-title", "05 · Case studies", "Select a project to read the full story.",
+      "The library opens on governance, risk and compliance work. Choose All topics for the full set. Each case study shows the challenge, what I built, the evidence of impact and the technologies involved. Client names and sensitive details are intentionally removed.",
       h("div", { class: "count-pill" }, h("span", { html: icon("BookOpenCheck") }), D.projects.length + " case studies")),
     h("div", { class: "tools-row" },
       h("div", { class: "search" }, h("span", { class: "ic", html: icon("Search") }), search, h("kbd", { text: "/" })),
@@ -297,7 +297,9 @@
   /* ---------- open source (with live GitHub data) ---------- */
   var ossCards = {};
   var ossWrap = h("div", { class: "grid g2 mt" });
-  D.ownProjects.forEach(function (p) {
+  var OSS_ORDER = ["Application Risk Assessment Template", "Risk Treatment Plan Generator", "Vendor Risk Assessment (TPRM) Template", "Cybersecurity RACI Matrices Library", "ISO 27001 & ISO 42001 Toolkit", "GRC Control Crosswalk", "Control Evidence Collector", "Policy-as-Code Starter", "AI Risk Assessment Template (ISO/IEC 42001)", "Threat Modeling Toolkit", "CISO Executive Dashboard", "Security Metrics & KPI Library", "SOC Maturity Assessment Tool", "SOC Detection Rules & Playbooks", "Incident Response Playbooks Pack", "Public Scripts"];
+  function ossRank(p) { var k = OSS_ORDER.indexOf(p.name); return k < 0 ? 99 : k; }
+  D.ownProjects.slice().sort(function (a, b) { return ossRank(a) - ossRank(b); }).forEach(function (p) {
     var slug = p.href.split("/").pop();
     var meta2 = h("div", { class: "meta" });
     var card = h("article", { class: "oss" },
@@ -308,8 +310,29 @@
         h("a", { class: "btn btn-primary btn-sm", href: p.href, target: "_blank", rel: "noopener noreferrer" }, "View on GitHub", h("span", { html: icon("ExternalLink") }))));
     ossCards[slug] = meta2; ossWrap.appendChild(card);
   });
+  var repoHref = {};
+  D.ownProjects.forEach(function (p) { repoHref[p.name] = p.href; });
+  /* GRC coverage: every domain points at work that already appears on this page */
+  var COVERAGE = [
+    ["Risk assessment & treatment", "Business-application risk assessments with owners, treatment options and an executive risk view.", ["18", "04"], ["Application Risk Assessment Template", "Risk Treatment Plan Generator"]],
+    ["Compliance & audit", "ISO/IEC 27001 and 42001 control mapping, SOC 2 control evidence and an evidence collector.", ["13"], ["ISO 27001 & ISO 42001 Toolkit", "GRC Control Crosswalk", "Control Evidence Collector"]],
+    ["Third-party risk", "Vendor assessment, renewal governance and control of third-party remote access.", ["16", "08"], ["Vendor Risk Assessment (TPRM) Template"]],
+    ["Policy & accountability", "Policy enforced as code, hardened baselines and clear RACI ownership.", ["01"], ["Policy-as-Code Starter", "Cybersecurity RACI Matrices Library"]],
+    ["Metrics & executive reporting", "KPIs that leadership can act on, from Secure Score progress to a CISO dashboard.", ["04"], ["CISO Executive Dashboard", "Security Metrics & KPI Library"]],
+    ["AI governance", "AI risk assessment aligned to ISO/IEC 42001 and structured threat modelling.", [], ["AI Risk Assessment Template (ISO/IEC 42001)", "Threat Modeling Toolkit"]],
+    ["Resilience & incident governance", "Multi-site continuity design and response playbooks that keep decisions accountable.", ["17", "19"], ["Incident Response Playbooks Pack"]]
+  ];
+  var grcMap = h("div", { class: "grc-map", role: "list", "aria-label": "GRC coverage" }, COVERAGE.map(function (c) {
+    var links = c[2].map(function (n) {
+      return h("a", { class: "lk", href: "#project-" + n, text: "Case study " + n, on: { click: function (e) { e.preventDefault(); PF.openProject(n); } } });
+    }).concat(c[3].filter(function (r) { return repoHref[r]; }).map(function (r) {
+      return h("a", { class: "lk repo", href: repoHref[r], target: "_blank", rel: "noopener noreferrer", text: r + " \u2197" });
+    }));
+    return h("article", { class: "grc-tile", role: "listitem" }, h("h3", { text: c[0] }), h("p", { text: c[1] }), h("div", { class: "lks" }, links));
+  }));
   mount("toolkit", [
-    head("toolkit-title", "Project evidence · Open-source GRC toolkit", "Open-source work, one click away.", "My own projects are published on GitHub. Follow a link to browse the code, README and licence."),
+    head("toolkit-title", "04 · GRC coverage & open-source toolkit", "Governance, risk and compliance, with working evidence.", "Each GRC domain below points to the case studies and original open-source projects that demonstrate it. The projects are published on GitHub, so you can browse the code, README and licence."),
+    grcMap,
     ossWrap,
     h("p", { class: "index-link" }, "All " + D.ownProjects.length + " projects are indexed in one place: ", h("a", { href: D.portfolioIndex, target: "_blank", rel: "noopener noreferrer", text: "github.com/bizidwassim-design/cybersecurity-portfolio" }))
   ]);
@@ -344,7 +367,7 @@
 
   /* ---------- events ---------- */
   mount("events", [
-    head("events-title", "05 · Continuous learning", "Always learning, always current.",
+    head("events-title", "07 · Continuous learning", "Always learning, always current.",
       "Conferences, seminars and community events I attend as a participant to stay current on cybersecurity, IT and AI, stay close to the practitioner community and earn the CPE credits that keep my certifications active. Each one brings practical lessons back into my security work.",
       h("a", { href: D.urls.linkedIn, target: "_blank", rel: "noopener noreferrer", class: "btn btn-ghost btn-sm" }, "View the complete LinkedIn activity", h("span", { html: icon("ExternalLink") }))),
     h("div", { class: "grid g3 mt" }, D.events.map(function (e) {
@@ -360,23 +383,23 @@
     var M = D.souvenirMoments;
     function item(m) {
       var ratio = m.width / m.height;
-      var fig = h("figure", { class: "m-item" + (ratio < 1 ? " portrait" : ""), tabindex: "0" },
+      var fig = h("figure", { class: "mg-item" + (ratio < 1 ? " portrait" : ""), tabindex: "0" },
         h("img", { src: m.src, alt: m.alt, width: m.width, height: m.height, loading: "lazy" }),
-        h("figcaption", { class: "m-cap" }, h("p", { class: "tg" }, m.tag), h("h3", null, m.title), h("p", { class: "dsc" }, m.description)));
+        h("figcaption", { class: "mg-cap" }, h("p", { class: "tg" }, m.tag), h("h3", null, m.title), h("p", { class: "dsc" }, m.description)));
       fig.style.setProperty("flex", ratio.toFixed(3) + " 1 0");
       return fig;
     }
     /* two justified rows: every photo is shown at once, side by side */
     var rows = [[0, 1], [2, 3, 4]].map(function (r) {
-      return h("div", { class: "m-row" }, r.filter(function (k) { return M[k]; }).map(function (k) { return item(M[k]); }));
+      return h("div", { class: "mg-row" }, r.filter(function (k) { return M[k]; }).map(function (k) { return item(M[k]); }));
     });
-    mount("moments", [head("moments-title", "06 · Professional moments", "Memorable Moments", "Professional connections, cybersecurity conferences and executive education: memorable encounters and milestones that continue to shape my journey."),
+    mount("moments", [head("moments-title", "08 · Professional moments", "Memorable Moments", "Professional connections, cybersecurity conferences and executive education: memorable encounters and milestones that continue to shape my journey."),
       h("div", { class: "moments", role: "group", "aria-label": "Professional moments" }, rows)]);
   })();
 
   /* ---------- values ---------- */
   mount("values", [h("div", { class: "values-split" },
-    h("div", null, head("values-title", "07 · Motto & values", "Automate. Augment. Stay curious.", "Three principles guide how I approach technology, improvement and responsible innovation."),
+    h("div", null, head("values-title", "09 · Motto & values", "Automate. Augment. Stay curious.", "Three principles guide how I approach technology, improvement and responsible innovation."),
       h("blockquote", { class: "quote", text: "“Automate the repeatable. Use AI to accelerate good judgment. Stay curious enough to keep learning, and critical enough to keep testing.”" })),
     h("div", { class: "vlist" }, D.personalValues.map(function (v, k) {
       var c = ["#2F80ED", "#FF7A6B", "#42C7A5"][k % 3];
@@ -394,7 +417,7 @@
   mount("credentials", [
     h("div", { class: "cred-split" },
       h("div", null,
-        head("credentials-title", "Additional · Credentials", "Technical depth, governance perspective.", "Formal security and technology certifications reinforced by business leadership education and continuous field learning. Highlighted cards are certifications I have obtained."),
+        head("credentials-title", "06 · Credentials", "Technical depth, governance perspective.", "Formal security and technology certifications reinforced by business leadership education and continuous field learning. Highlighted cards are certifications I have obtained."),
         h("p", { class: "mt" }, h("a", { class: "btn btn-primary", href: D.urls.credly, target: "_blank", rel: "noopener noreferrer" }, h("span", { html: icon("Award") }), "Verify badges on Credly", h("span", { html: icon("ExternalLink") }))),
         h("div", { class: "frame-card" }, h("span", { html: icon("GraduationCap") }), h("b", { text: "Framework fluency" }), h("p", { text: "NIST CSF 2.0 · ISO 27001 · ISO 42001 · SOC 2 · CIS Controls · Zero Trust · Microsoft security architecture · risk treatment and audit evidence" }))),
       h("div", { class: "grid g2" }, D.credentials.map(function (c, k) {
