@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISO Compass · Information Security &amp; AI Governance</title>
+  <meta name="description" content="An independent interactive guide to ISO/IEC 27001, 42001 and 27090: compare their roles, explore use cases and build a practical action plan.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview"><span class="brand-icon" aria-hidden="true">✳</span><span>ISO <strong>Compass</strong><small>SECURITY × AI GOVERNANCE</small></span></a>
+      <p class="nav-label">YOUR FIELD GUIDE</p>
+      <nav aria-label="Guide sections">
+        <button type="button" class="nav-item" data-view="overview" aria-pressed="true"><span aria-hidden="true">◈</span> Executive overview <b>01</b></button>
+        <button type="button" class="nav-item" data-view="compare" aria-pressed="false"><span aria-hidden="true">▦</span> Compare standards <b>02</b></button>
+        <button type="button" class="nav-item" data-view="decision" aria-pressed="false"><span aria-hidden="true">⌁</span> Find your starting point <b>03</b></button>
+        <button type="button" class="nav-item" data-view="plan" aria-pressed="false"><span aria-hidden="true">☑</span> Build an action plan <b>04</b></button>
+        <button type="button" class="nav-item" data-view="sources" aria-pressed="false"><span aria-hidden="true">↗</span> Sources &amp; boundaries <b>05</b></button>
+      </nav>
+      <div class="sidebar-note"><span class="small-caps">THE IMPORTANT DISTINCTION</span><p>Two management systems.<br>One AI security guide.</p><small>Complementary, not interchangeable.</small></div>
+      <div class="sidebar-foot"><a href="../">← Wassim Bizid · Portfolio</a><span>Independent educational project</span></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><div class="breadcrumb">FIELD NOTES <span>/</span> <strong id="view-label">Executive overview</strong></div><div class="top-actions"><span class="reviewed">Reviewed 06 Nov 2026</span><button id="theme" class="button subtle" type="button" aria-pressed="false">Dark theme</button><button id="print" class="button" type="button">Print guide <span aria-hidden="true">↗</span></button></div></header>
+      <main id="main" tabindex="-1">
+        <section id="overview" class="view" aria-labelledby="overview-title">
+          <div class="hero"><div class="hero-copy"><p class="eyebrow">THE INFORMATION SECURITY + AI EDITION</p><h1 id="overview-title">Different mandates.<br><em>One connected strategy.</em></h1><p class="lead">Understand what each standard is for, where they meet, and how to turn that understanding into a practical programme.</p><button type="button" class="button primary" data-open="compare">Explore the comparison <span aria-hidden="true">→</span></button></div><div class="hero-art" aria-label="Three complementary perspectives: information security, AI governance and AI security"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-tile tile-blue"><small>PROTECT INFORMATION</small><b>27001</b><span>Information security</span></div><div class="art-tile tile-purple"><small>GOVERN AI</small><b>42001</b><span>Responsible AI</span></div><div class="art-tile tile-teal"><small>SECURE AI SYSTEMS</small><b>27090</b><span>AI-specific threats</span></div><span class="art-caption">THREE LENSES. SHARED ACCOUNTABILITY.</span></div></div>
+          <div class="section-heading"><div><p class="eyebrow">01 / THE BIG PICTURE</p><h2>Choose the lens. Keep the full picture.</h2></div><span class="pill">Official editions · independent guidance</span></div>
+          <div id="standard-cards" class="standard-grid"></div>
+          <div class="callout"><span class="callout-icon" aria-hidden="true">i</span><p><strong>A shared programme, not three disconnected checklists.</strong> Use the same inventory, risk decisions and evidence where scopes align. Do not assume that evidence for one standard proves conformity with another.</p></div>
+          <div class="example-section"><div class="section-heading"><div><p class="eyebrow">APPLIED EXAMPLE · AUTHOR'S INTERPRETATION</p><h2>What does this mean in practice?</h2></div><label class="select-label" for="use-case">Use case<select id="use-case"><option value="support">AI customer-support assistant</option><option value="credit">AI credit-decision support</option><option value="saas">Business SaaS, no AI</option></select></label></div><div id="use-case-result" class="example-grid"></div></div>
+        </section>
+        <section id="compare" class="view" aria-labelledby="compare-title" hidden>
+          <div class="page-heading"><p class="eyebrow">02 / SIDE BY SIDE</p><h1 id="compare-title">Same conversation.<br><em>Different responsibilities.</em></h1><p class="lead">Compare purpose and assurance, then explore practical evidence ideas. This is a thematic comparison—not an official clause crosswalk.</p></div>
+          <div class="toolbar"><div class="segmented" role="group" aria-label="Comparison perspective"><button type="button" data-mode="business" aria-pressed="true">Business perspective</button><button type="button" data-mode="evidence" aria-pressed="false">Evidence ideas</button></div><label class="search-label">Search comparison<input id="comparison-search" type="search" placeholder="Try risk, supplier, audit…"></label></div>
+          <div class="table-wrap"><table><caption id="comparison-caption">Thematic comparison · business perspective</caption><thead><tr><th scope="col">Dimension</th><th scope="col" class="blue-text">ISO/IEC 27001:2022</th><th scope="col" class="purple-text">ISO/IEC 42001:2023</th><th scope="col" class="teal-text">ISO/IEC 27090:2026</th></tr></thead><tbody id="comparison-rows"></tbody></table></div><p id="comparison-status" class="muted" role="status"></p>
+          <div class="callout"><span class="callout-icon" aria-hidden="true">!</span><p><strong>Requirements are not the same as guidance.</strong> ISO/IEC 27001 and 42001 specify management-system requirements. ISO/IEC 27090 is AI security guidance, not a third management-system certification target.</p></div>
+        </section>
+        <section id="decision" class="view" aria-labelledby="decision-title" hidden>
+          <div class="page-heading"><p class="eyebrow">03 / DECISION GUIDE</p><h1 id="decision-title">Start with your need.<br><em>Not a standard number.</em></h1><p class="lead">A discussion aid to help you frame the first workstream. Recommendations are this guide's interpretation, not an ISO applicability decision.</p></div>
+          <div class="decision-layout"><form id="decision-form" class="panel"><fieldset><legend>01 · Does the scope include AI?</legend><label class="radio-card"><input type="radio" name="ai" value="yes" checked><span><strong>Yes</strong><small>We build, provide or use AI.</small></span></label><label class="radio-card"><input type="radio" name="ai" value="no"><span><strong>No</strong><small>No AI in the intended scope.</small></span></label><label class="radio-card"><input type="radio" name="ai" value="unknown"><span><strong>Not sure yet</strong><small>We need to identify AI use first.</small></span></label></fieldset><label class="field" for="goal">02 · What needs attention first?<select id="goal"><option value="security">Information security &amp; assurance</option><option value="governance">AI accountability &amp; oversight</option><option value="threats">Attacks against AI systems</option></select></label><button type="submit" class="button primary">Build my starting point <span aria-hidden="true">→</span></button></form><div id="recommendation" class="panel recommendation" aria-live="polite"><span class="recommend-icon" aria-hidden="true">⌁</span><p class="eyebrow">A BETTER FIRST QUESTION</p><h2>What are we trying to protect, and who is accountable?</h2><p>Set your context on the left to see a suggested starting point, supporting standards and an immediate next action.</p></div></div>
+        </section>
+        <section id="plan" class="view" aria-labelledby="plan-title" hidden>
+          <div class="page-heading"><p class="eyebrow">04 / FROM UNDERSTANDING TO ACTION</p><h1 id="plan-title">One practical plan.<br><em>Three useful perspectives.</em></h1><p class="lead">An original 12-action starter plan. Mark actions you have completed, then export a handover for your team. Not a full standards checklist or a conformity assessment.</p></div>
+          <div class="plan-top"><div class="progress-card"><div><span class="small-caps">YOUR STARTER PLAN</span><strong id="plan-count">0 / 12 actions</strong></div><progress id="plan-progress" max="12" value="0" aria-label="Starter actions completed"></progress><p>Planning progress only—not a compliance or certification score.</p></div><div class="export-buttons"><button id="export-md" class="button primary" type="button">Export Markdown ↓</button><button id="export-json" class="button" type="button">Export JSON ↓</button><button id="reset" class="button subtle" type="button">Reset checkmarks</button></div></div>
+          <p class="storage-note" id="storage-note">Only checkmarks are saved in this browser. Do not treat local storage as a secure evidence repository.</p><div id="plan-phases" class="phase-grid"></div><p id="plan-status" class="sr-only" role="status"></p>
+        </section>
+        <section id="sources" class="view" aria-labelledby="sources-title" hidden>
+          <div class="page-heading"><p class="eyebrow">05 / SOURCE NOTES</p><h1 id="sources-title">Grounded in standards.<br><em>Honest about the limits.</em></h1><p class="lead">Public ISO and IEC descriptions anchor the distinctions. Examples, evidence ideas, recommendations and the starter plan are original interpretations.</p></div><div id="source-list" class="source-grid"></div>
+          <div class="panel boundaries"><h2>Before using this guide</h2><ul><li>This is an independent learning tool. It is not endorsed by ISO or IEC and does not reproduce their paid standards.</li><li>Consult the licensed standards, relevant amendments and your chosen certification body for an actual conformity assessment.</li><li>ISO/IEC 27001 and 42001 certification concerns a defined management-system scope—not a guarantee that every AI product is safe or legally compliant.</li><li>The official ISO catalogue lists ISO/IEC 27090:2026 as published in October 2026. An older ISO explainer still describes a final draft; the published catalogue takes precedence for status.</li><li>The illustrative workstreams are not an official control equivalence, legal opinion, certification claim or promise of security.</li><li>The app sends no entered data to a server. Hosting infrastructure may still record ordinary web access logs. No analytics, external fonts or third-party scripts are included.</li></ul></div>
+        </section>
+      </main>
+      <footer><span>Wassim Bizid <b>·</b> Independent GRC tools</span><span>Understand → Decide → Act <b>·</b> <a href="#sources" data-open="sources">Source notes</a></span></footer>
+    </div>
+  </div>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
