@@ -1157,6 +1157,21 @@ window.PF_DATA = {
  ],
  "ownProjects": [
   {
+    "name": "ISO Compass — 27001 × 42001 × 27090",
+    "description": "Independent interactive guide to information security, AI governance and AI cybersecurity: searchable comparison, three applied examples, context-based starting points and a 12-action plan with Markdown/JSON export. Distinguishes management-system requirements from guidance; not a certification or official clause crosswalk.",
+    "href": "https://github.com/bizidwassim-design/wassim-bizid-portfolio/tree/main/iso-ai-guide",
+    "live": "https://bizidwassim-design.github.io/wassim-bizid-portfolio/iso-ai-guide/",
+    "embedded": true,
+    "tags": [
+      "ISO 27001",
+      "ISO 42001",
+      "ISO 27090",
+      "AI governance",
+      "AI security",
+      "GitHub Pages"
+    ]
+  },
+  {
    "name": "Executive Risk Pack",
    "description": "Quarterly board cyber-risk pack generated from CSV and YAML: one-page summary, NIST CSF 2.0 posture against target, top-ten risks with heat map, key risk indicators with RAG status, a twelve-month regulatory and assurance calendar and the decisions the board is asked to take. Markdown, Excel and PNG outputs, validated in CI; fictional sample company.",
    "href": "https://github.com/bizidwassim-design/executive-risk-pack",

@@ -347,7 +347,7 @@
     head("toolkit-title", "04 · GRC coverage & open-source toolkit", "Governance, risk and compliance, with working evidence.", "Each GRC domain below points to the case studies and original open-source projects that demonstrate it. The projects are published on GitHub, so you can browse the code, README and licence."),
     grcMap,
     ossWrap,
-    h("p", { class: "index-link" }, "How to read the numbers: GitHub shows " + (D.ownProjects.length + 4) + " public repositories, the " + D.ownProjects.length + " open-source projects above plus this portfolio site, the profile, the project index and a redirect. The " + D.projects.length + " case studies are anonymised professional work, separate from the repositories. All " + D.ownProjects.length + " projects are indexed in one place: ", h("a", { href: D.portfolioIndex, target: "_blank", rel: "noopener noreferrer", text: "github.com/bizidwassim-design/cybersecurity-portfolio" }))
+    h("p", { class: "index-link" }, "The toolkit contains " + D.ownProjects.length + " open-source projects, including guides hosted inside this portfolio. Project counts are not repository counts. The " + D.projects.length + " case studies are anonymised professional work, separate from the open-source toolkit. Browse the broader project index: ", h("a", { href: D.portfolioIndex, target: "_blank", rel: "noopener noreferrer", text: "github.com/bizidwassim-design/cybersecurity-portfolio" }))
   ]);
 
   function ago(iso) {

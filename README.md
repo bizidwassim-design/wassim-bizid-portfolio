@@ -13,7 +13,7 @@
 ## > whoami
 
 Cybersecurity and GRC leader. This repository is the source of my interactive portfolio: 23 anonymised case
-studies, 19 open-source GRC and SOC projects, credentials and a short story of how I work.
+studies, 20 open-source GRC and SOC projects, credentials and a short story of how I work.
 
 **Open it → [bizidwassim-design.github.io/wassim-bizid-portfolio](https://bizidwassim-design.github.io/wassim-bizid-portfolio/)**
 

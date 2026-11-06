@@ -47,7 +47,7 @@ ok("CSP strict, no inline code");
 
 // 6. Content sanity
 data.projects.length === 23 || fail("expected 23 case studies, found " + data.projects.length);
-data.ownProjects.length === 19 || fail("expected 19 open-source projects, found " + data.ownProjects.length);
+data.ownProjects.length === 20 || fail("expected 20 open-source projects, found " + data.ownProjects.length);
 ok(data.projects.length + " case studies, " + data.ownProjects.length + " open-source projects");
 
 if (failures) { console.error("\n" + failures + " check(s) failed"); process.exit(1); }
